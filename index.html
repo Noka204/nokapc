@@ -1,107 +1,32 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Cơ Bản</title>
-    <style>
-        /* CSS trong cùng file */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        nav {
-            background-color: #333;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        nav ul li {
-            float: left;
-        }
-
-        nav ul li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            background-color: #111;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <title>Interactive Web Design</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Chào mừng bạn đến với Trang Web Cơ Bản</h1>
-    </header>
+    <!-- Trang chính hiển thị nội dung -->
+    <div id="main-screen" class="screen">
+        <div class="blur-background"></div> <!-- Nền bị làm mờ -->
+        <div class="profile-content">
+            <img src="avatar.png" alt="Avatar" class="profile-avatar">
+            <h1 class="profile-name">nokapc</h1>
+            <p class="profile-description">Mình là Như Khánh nè</p>
 
-    <nav>
-        <ul>
-            <li><a href="#">Trang Chủ</a></li>
-            <li><a href="#">Giới Thiệu</a></li>
-            <li><a href="#">Dịch Vụ</a></li>
-            <li><a href="#">Liên Hệ</a></li>
-        </ul>
-    </nav>
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+            </div>
 
-    <main>
-        <section>
-            <h2>Giới Thiệu</h2>
-            <p>Đây là một trang web đơn giản được tạo bằng HTML, CSS và JavaScript.</p>
-        </section>
-
-        <section>
-            <h2>Dịch Vụ</h2>
-            <p>Chúng tôi cung cấp nhiều dịch vụ khác nhau để đáp ứng nhu cầu của bạn.</p>
-            <button id="btn-service">Tìm hiểu thêm</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Trang Web Cơ Bản</p>
-    </footer>
-
-    <script>
-        // JavaScript trong cùng file
-        document.getElementById('btn-service').addEventListener('click', function() {
-            alert('Cảm ơn bạn đã quan tâm đến dịch vụ của chúng tôi!');
-        });
-    </script>
+            <div class="additional-info">
+                <p><img src="avatar.png" alt="Secondary Avatar" class="secondary-avatar"> trannhukhanh</p>
+                <p>Nếu lúc đó ...</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
