@@ -1,32 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Web Design</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-</head>
-<body>
-    <!-- Trang chính hiển thị nội dung -->
-    <div id="main-screen" class="screen">
-        <div class="blur-background"></div> <!-- Nền bị làm mờ -->
-        <div class="profile-content">
-            <img src="avatar.png" alt="Avatar" class="profile-avatar">
-            <h1 class="profile-name">nokapc</h1>
-            <p class="profile-description">Mình là Như Khánh nè</p>
+/* Cài đặt chung cho toàn trang */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
-            </div>
+/* Nền làm mờ với ảnh img1.png */
+.blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.alphacoders.com/135/thumb-1920-1350420.png'); /* Đặt ảnh img1.png làm nền */
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px); /* Làm mờ nền */
+    z-index: -1; /* Đặt nền ở phía sau */
+}
 
-            <div class="additional-info">
-                <p><img src="avatar.png" alt="Secondary Avatar" class="secondary-avatar"> trannhukhanh</p>
-                <p>Nếu lúc đó ...</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+/* Định dạng nội dung hiển thị */
+.profile-content {
+    z-index: 1; /* Nội dung nổi lên trên nền */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Nền trong suốt màu đen */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng nổi bật */
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Các liên kết mạng xã hội */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #ff6347; /* Màu nổi bật khi hover */
+}
+
+/* Thông tin phụ */
+.additional-info {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.secondary-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
