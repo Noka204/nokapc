@@ -20,7 +20,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.alphacoders.com/135/thumb-1920-1350420.png'); /* Đặt ảnh img1.png làm nền */
+    background-image: url(https://images.alphacoders.com/135/thumb-1920-1350420.png);
     background-size: cover;
     background-position: center;
     filter: blur(10px); /* Làm mờ nền */
