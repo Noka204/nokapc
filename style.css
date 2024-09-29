@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Design</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Trang chính hiển thị nội dung -->
+    <div id="main-screen" class="screen">
+        <div class="blur-background"></div> <!-- Nền bị làm mờ -->
+        <div class="profile-content">
+            <img src="avatar.png" alt="Avatar" class="profile-avatar">
+            <h1 class="profile-name">nokapc</h1>
+            <p class="profile-description">Mình là Như Khánh nè</p>
+
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+            </div>
+
+            <div class="additional-info">
+                <p><img src="avatar.png" alt="Secondary Avatar" class="secondary-avatar"> trannhukhanh</p>
+                <p>Nếu lúc đó ...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
