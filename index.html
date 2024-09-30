@@ -257,17 +257,37 @@
 <script>
     // Chỉ tăng số lượt xem 1 lần khi trang tải
     document.addEventListener('DOMContentLoaded', function() {
-        // Lấy số lượt xem hiện tại từ localStorage
-        let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+        // Sử dụng API ipify để lấy địa chỉ IP của người dùng
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const userIp = data.ip;
 
-        // Tăng số lượt xem lên 1
-        views += 1;
+                // Lấy danh sách IP từ localStorage
+                let ipList = localStorage.getItem('ipList') ? JSON.parse(localStorage.getItem('ipList')) : [];
 
-        // Lưu lại số lượt xem mới vào localStorage
-        localStorage.setItem('views', views);
+                // Kiểm tra xem IP này đã tồn tại trong danh sách hay chưa
+                if (!ipList.includes(userIp)) {
+                    // Nếu IP chưa tồn tại, tăng số lượt xem và thêm IP vào danh sách
+                    let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+                    views += 1;
 
-        // Hiển thị số lượt xem trên trang
-        document.getElementById('view-count').textContent = views;
+                    // Lưu lại số lượt xem mới vào localStorage
+                    localStorage.setItem('views', views);
+                    document.getElementById('view-count').textContent = views;
+
+                    // Thêm IP vào danh sách và lưu lại
+                    ipList.push(userIp);
+                    localStorage.setItem('ipList', JSON.stringify(ipList));
+                } else {
+                    // Nếu IP đã tồn tại, chỉ hiển thị số lượt xem hiện tại
+                    let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+                    document.getElementById('view-count').textContent = views;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching IP:', error);
+            });
     });
 
     // Chuyển từ trang intro sang trang hồ sơ
