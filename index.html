@@ -262,19 +262,6 @@
 
         // Phát nhạc khi người dùng vào trang chính
         playMusic();
-
-        // Giả lập bộ đếm lượt xem bằng localStorage
-        // Lấy số lượt xem hiện tại từ localStorage
-        let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
-
-        // Tăng số lượt xem lên 1
-        views += 1;
-
-        // Lưu lại số lượt xem mới vào localStorage
-        localStorage.setItem('views', views);
-
-        // Hiển thị số lượt xem trên trang
-        document.getElementById('view-count').textContent = views;
     }
 
     function playMusic() {
@@ -287,22 +274,25 @@
         });
     }
 
-    // Cho phép bấm bất kỳ phím nào hoặc nhấp vào trang để vào trang chính và phát nhạc
+    // Chỉ tăng số lượt xem 1 lần khi trang tải
     document.addEventListener('DOMContentLoaded', function() {
-    // Lấy số lượt xem hiện tại từ localStorage
-    let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+        // Lấy số lượt xem hiện tại từ localStorage
+        let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
 
-    // Lưu lại số lượt xem mới vào localStorage
-    localStorage.setItem('views', views);
+        // Tăng số lượt xem lên 1
+        views += 1;
 
-    // Hiển thị số lượt xem trên trang
-    document.getElementById('view-count').textContent = views;
-});
+        // Lưu lại số lượt xem mới vào localStorage
+        localStorage.setItem('views', views);
 
+        // Hiển thị số lượt xem trên trang
+        document.getElementById('view-count').textContent = views;
+    });
+
+    // Cho phép bấm bất kỳ phím nào hoặc nhấp vào trang để vào trang chính và phát nhạc
     document.getElementById('intro-page').addEventListener('click', function() {
         enterProfile();
     });
-
 </script>
 
 </body>
