@@ -288,12 +288,21 @@
         enterProfile();
     });
 
-    // Lấy số lượt xem từ file PHP
-    fetch('counter.php')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('view-count').textContent = data;
-    });
+    // Giả lập bộ đếm lượt xem bằng localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy số lượt xem hiện tại từ localStorage
+    let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+
+    // Tăng số lượt xem lên 1
+    views += 1;
+
+    // Lưu lại số lượt xem mới vào localStorage
+    localStorage.setItem('views', views);
+
+    // Hiển thị số lượt xem trên trang
+    document.getElementById('view-count').textContent = views;
+});
+
 </script>
 
 </body>
