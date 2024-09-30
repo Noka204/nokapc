@@ -262,6 +262,19 @@
 
         // Phát nhạc khi người dùng vào trang chính
         playMusic();
+
+        // Giả lập bộ đếm lượt xem bằng localStorage
+        // Lấy số lượt xem hiện tại từ localStorage
+        let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
+
+        // Tăng số lượt xem lên 1
+        views += 1;
+
+        // Lưu lại số lượt xem mới vào localStorage
+        localStorage.setItem('views', views);
+
+        // Hiển thị số lượt xem trên trang
+        document.getElementById('view-count').textContent = views;
     }
 
     function playMusic() {
@@ -274,11 +287,6 @@
         });
     }
 
-    // Phát nhạc khi trang tải nếu không bị chặn
-    document.addEventListener('DOMContentLoaded', function() {
-        playMusic();
-    });
-
     // Cho phép bấm bất kỳ phím nào hoặc nhấp vào trang để vào trang chính và phát nhạc
     document.addEventListener('keydown', function() {
         enterProfile();
@@ -287,21 +295,6 @@
     document.getElementById('intro-page').addEventListener('click', function() {
         enterProfile();
     });
-
-    // Giả lập bộ đếm lượt xem bằng localStorage
-document.addEventListener('DOMContentLoaded', function() {
-    // Lấy số lượt xem hiện tại từ localStorage
-    let views = localStorage.getItem('views') ? parseInt(localStorage.getItem('views')) : 0;
-
-    // Tăng số lượt xem lên 1
-    views += 1;
-
-    // Lưu lại số lượt xem mới vào localStorage
-    localStorage.setItem('views', views);
-
-    // Hiển thị số lượt xem trên trang
-    document.getElementById('view-count').textContent = views;
-});
 
 </script>
 
